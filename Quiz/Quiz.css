@@ -1,0 +1,101 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family:"Bookman Old Style","Book Antiqua",serif;
+    font-size: 102%;
+  }
+  :root{
+    --hue-neutral: 200;
+    --hue-wrong:0;
+    --hue-correct:145;
+  }
+  body{
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+  }
+  html { 
+    background: url("harrypotter.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  body.correct{
+    --hue:var(--hue-correct);
+  }
+  body.wrong{
+    --hue:var(--hue-wrong);
+  }
+  .container{
+    width: 50%;
+    border-radius: 5px;
+    padding: 2em;
+    background-color: darkgray;
+  }
+  .btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap:15px;
+    margin: 20px 0;
+  }
+  .btn{
+    --hue:var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color:rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px 10px;
+    color: rgb(71, 3, 92);
+    outline: none;
+  }
+  .btn:hover{
+    background-color: cornsilk;
+    border-color: black;
+  }
+  .btn.correct{
+    --hue:var(--hue-correct);
+    color: rgb(9, 87, 2);
+  }
+  .btn.wrong{
+    --hue:var(--hue-wrong);
+    color: rgb(110, 4, 4);
+  }
+  #marks{
+    width: 20%;
+    background-color:darkgray;
+    border-radius: 5px;
+    /*padding: 1em;*/
+    box-shadow: 0 0 20px 2px;
+    position: fixed;
+    right:20%;
+    top:5%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 140%;
+  }
+  .start-btn, .next-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+  }
+  .controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .result{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hide{
+    display: none;
+  }
